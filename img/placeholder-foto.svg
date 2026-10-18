@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Foto belum dipasang">
+  <rect width="800" height="1000" fill="#0b1326"/>
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 200H800M0 400H800M0 600H800M0 800H800"/>
+    <path d="M160 0V1000M320 0V1000M480 0V1000M640 0V1000"/>
+  </g>
+  <g fill="none" stroke="#4edea3" stroke-width="8" stroke-linejoin="round">
+    <rect x="320" y="380" width="160" height="130" rx="16"/>
+    <circle cx="400" cy="445" r="34"/>
+  </g>
+  <path d="M356 380l16-28h56l16 28" fill="none" stroke="#4edea3" stroke-width="8" stroke-linejoin="round"/>
+  <text x="400" y="620" text-anchor="middle" fill="#dae2fd" font-family="monospace" font-size="34" letter-spacing="2">FOTO BELUM DIPASANG</text>
+  <text x="400" y="672" text-anchor="middle" fill="#908fa0" font-family="monospace" font-size="24">letakkan file Anda:</text>
+  <text x="400" y="708" text-anchor="middle" fill="#c0c1ff" font-family="monospace" font-size="24">img/hero-foto.jpg</text>
+  <text x="400" y="744" text-anchor="middle" fill="#c0c1ff" font-family="monospace" font-size="24">img/about-foto.jpg</text>
+</svg>

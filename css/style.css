@@ -1,0 +1,122 @@
+/*
+ * style.css — gaya kustom untuk web.html (desktop) & mobile.html
+ *
+ * Isi aslinya digabung dari blok <style> di dalam kedua file HTML tanpa
+ * mengubah struktur. Kelas kedua halaman tidak saling bertabrakan, jadi
+ * keduanya aman dimuat bersama.
+ *
+ * Urutan bagian:
+ *   1. Dipakai bersama      : .material-symbols-outlined
+ *   2. Khusus web.html      : .contour-silhouette, @keyframes morphBlob, .glass-lumina
+ *   3. Khusus mobile.html   : .contour-organic, .glass-card, .glass-card-interactive,
+ *                             .text-gradient-accent
+ *   4. Perbaikan navigasi   : scroll-padding-top (lihat README)
+ *
+ * Warna: nilai rgba/hex di file ini mengikuti palet tema "biru tua -> ungu tua
+ * -> krem/abu-abu lembut" (lihat bagian "Palet warna" di README). Kelas
+ * .text-gradient-purple-cyan yang lama kini bernama .text-gradient-accent.
+ */
+
+/* ===== 1. Dipakai bersama ===== */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+/* ===== 2. Khusus web.html (versi desktop) ===== */
+.contour-silhouette {
+    position: relative;
+}
+
+.contour-silhouette::before {
+    content: '';
+    position: absolute;
+    inset: -14px -14px -6px -14px;
+    border: 1px dashed rgba(242, 232, 213, 0.20);
+    border-radius: 54% 46% 62% 38% / 41% 58% 42% 59%;
+    pointer-events: none;
+    animation: morphBlob 16s ease-in-out infinite alternate;
+}
+
+.contour-silhouette::after {
+    content: '';
+    position: absolute;
+    inset: -28px -24px -16px -24px;
+    border: 1px solid rgba(189, 168, 242, 0.18);
+    border-radius: 48% 52% 43% 57% / 55% 42% 58% 45%;
+    pointer-events: none;
+    animation: morphBlob 22s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes morphBlob {
+    0% {
+        border-radius: 54% 46% 62% 38% / 41% 58% 42% 59%;
+    }
+
+    50% {
+        border-radius: 42% 58% 49% 51% / 58% 41% 59% 41%;
+    }
+
+    100% {
+        border-radius: 61% 39% 53% 47% / 45% 63% 37% 55%;
+    }
+}
+
+.glass-lumina {
+    background: rgba(10, 16, 32, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-lumina:hover {
+    border-color: rgba(242, 232, 213, 0.32);
+    box-shadow: 0 0 28px -6px rgba(123, 91, 208, 0.22);
+}
+
+/* ===== 3. Khusus mobile.html (versi mobile) ===== */
+.contour-organic {
+    border-radius: 42% 58% 63% 37% / 41% 43% 57% 59%;
+    transition: all 4s ease-in-out;
+}
+
+.contour-organic:hover {
+    border-radius: 50% 50% 45% 55% / 54% 39% 61% 46%;
+}
+
+.glass-card {
+    background: rgba(10, 16, 32, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-interactive {
+    background: rgba(10, 16, 32, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease-out;
+}
+
+.glass-card-interactive:hover {
+    border-color: rgba(246, 236, 214, 0.28);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(74, 47, 127, 0.30);
+}
+
+.text-gradient-accent {
+    background: linear-gradient(135deg, #f2e8d5 0%, #c9b6f0 50%, #a6bdf0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== 4. Perbaikan navigasi =====
+ * Header bersifat sticky setinggi 5rem (h-20) di web.html. Tanpa ini,
+ * section yang dituju tautan (mis. #about) tertutup sebagian oleh header.
+ * mobile.html tidak terpengaruh karena sudah memakai class scroll-mt-24.
+ */
+html {
+    scroll-padding-top: 5rem;
+}

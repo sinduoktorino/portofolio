@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mohamad Sindu Oktorino — Informatics Student &amp; Software Engineer</title>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS: salinan lokal, jadi halaman tetap tampil benar tanpa internet -->
+    <script src="js/tailwind-cdn.js?plugins=forms,container-queries"></script>
+    <!-- Konfigurasi Tailwind (dipisah ke js/tailwind.config.js) -->
+    <script src="js/tailwind.config.js"></script>
+    <!-- Gaya kustom dipisah ke css/style.css -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container antialiased min-h-screen relative overflow-x-hidden font-body-md text-body-md">
+    <!-- Ambient Background Glow Gradients -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div
+            class="absolute -top-40 left-1/2 -translate-x-1/2 w-[720px] h-[480px] bg-primary/10 rounded-full blur-[140px]">
+        </div>
+        <div
+            class="absolute top-[35%] -left-32 w-[500px] h-[500px] bg-secondary-container/20 rounded-full blur-[160px]">
+        </div>
+        <div
+            class="absolute bottom-20 -right-32 w-[520px] h-[520px] bg-tertiary-container/15 rounded-full blur-[180px]">
+        </div>
+    </div>
+    <!-- Shared Component: TopNavBar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-sm transition-all duration-200">
+        <div class="flex items-center justify-between px-6 md:px-12 max-w-7xl mx-auto h-20">
+            <!-- Brand & Status Pill -->
+            <div class="flex items-center gap-4">
+                <a class="flex items-center gap-2 group" href="#hero">
+                    <div
+                        class="w-9 h-9 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary font-label-code text-label-code font-bold group-hover:border-primary/60 transition-colors">
+                        MSO
+                    </div>
+                    <span
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-on-surface tracking-tight group-hover:text-primary transition-colors">
+                        Mohamad Sindu Oktorino
+                    </span>
+                </a>
+                <!-- 'Available for Work' Badge -->
+                <div
+                    class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-label-caps text-label-caps tracking-wider">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    AVAILABLE FOR WORK
+                </div>
+            </div>
+            <!-- Desktop Navigation Links (Shared Component Specs) -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors hover:text-primary font-medium text-body-md font-body-md"
+                    href="#about">About</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors hover:text-primary font-medium text-body-md font-body-md"
+                    href="#skills">Skills</a>
+                <a class="text-primary dark:text-primary font-medium border-b-2 border-primary pb-1 text-body-md font-body-md"
+                    href="#projects">Projects</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors hover:text-primary font-medium text-body-md font-body-md"
+                    href="#contact">Contact</a>
+            </nav>
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-all duration-200 active:scale-95"
+                    href="https://github.com/sinduoktorino" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                    Follow
+                </a>
+                <a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-body-md font-medium text-body-md transition-all duration-200 active:scale-95 shadow-sm hover:shadow-primary/25"
+                    href="#contact">
+                    <span>Get in touch</span>
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="relative z-10">
+        <!-- HERO SECTION -->
+        <section class="relative max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-24 pb-20 md:pb-32 overflow-visible"
+            id="hero">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- Hero Text & Socials -->
+                <div class="lg:col-span-7 flex flex-col items-start gap-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/40 font-label-code text-label-code text-primary">
+                        <span class="material-symbols-outlined text-[16px] text-tertiary">terminal</span>
+                        <span>Informatics Student &amp; Software Engineer</span>
+                    </div>
+                    <h1
+                        class="font-display md:text-display text-display-mobile tracking-tight font-extrabold text-on-surface leading-[1.12]">
+                        turning ideas into real life products is my
+                        <span
+                            class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">calling</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        Crafting resilient web architectures, sleek interactive client apps, and high-performance
+                        digital tools with deep attention to developer ergonomics and visual mastery.
+                    </p>
+                    <!-- Social Links Row with minimalist borders -->
+                    <div class="flex items-center gap-3 pt-3 flex-wrap">
+                        <div class="w-12 h-[1px] bg-outline-variant/50 hidden sm:block mr-2"></div>
+                        <a aria-label="Instagram"
+                            class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200 group active:scale-95"
+                            href="https://instagram.com/okto.rino_" rel="noopener noreferrer" target="_blank">
+                            <span
+                                class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">photo_camera</span>
+                        </a>
+                        <a aria-label="GitHub"
+                            class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200 group active:scale-95"
+                            href="https://github.com/sinduoktorino" rel="noopener noreferrer" target="_blank">
+                            <span
+                                class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">code</span>
+                        </a>
+                        <a aria-label="LinkedIn"
+                            class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200 group active:scale-95"
+                            href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                            <span
+                                class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">work</span>
+                        </a>
+                        <a aria-label="Email"
+                            class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200 group active:scale-95"
+                            href="mailto:contact@sinduoktorino70@gmail.com">
+                            <span
+                                class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">mail</span>
+                        </a>
+                    </div>
+                    <!-- Hero Quick Highlights -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 w-full border-t border-outline-variant/20 mt-4">
+                        <div>
+                            <div class="font-label-code text-label-code text-tertiary">CORE FOCUS</div>
+                            <div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">
+                                TypeScript &amp; Go</div>
+                        </div>
+                        <div>
+                            <div class="font-label-code text-label-code text-secondary">LOCATION</div>
+                            <div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Remote /
+                                Surakarta</div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <div class="font-label-code text-label-code text-primary">SPECIALTY</div>
+                            <div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">
+                                Full Stack Developer</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Portrait with Organic Fluid Contour Framing (Directly inspired by Reference Photo) -->
+                <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+                    <div class="relative w-72 sm:w-80 md:w-96 contour-silhouette">
+                        <!-- Subtle backdrop halo -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 via-secondary-container/20 to-tertiary/10 rounded-3xl blur-2xl -z-10">
+                        </div>
+                        <!-- Organic Fluid Contour Mask Container -->
+                        <div
+                            class="relative overflow-hidden rounded-3xl border border-outline-variant/50 bg-surface-container-low shadow-2xl">
+                            <!-- Reference portrait placeholder -->
+                            <img class="w-full h-[430px] sm:h-[480px] object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-700 ease-out"
+                                data-alt="A refined, professional portrait of a confident Asian male software engineer dressed in a sharp modern dark tailored suit against a muted studio backdrop. Soft cinematic rim lighting accents his silhouette with subtle cyan and violet undertones. The overall aesthetic is minimalist, modern, and poised for a high-end technical portfolio."
+                                src="img/sindu1.jpeg" />
+                            <!-- Dark gradient vignette overlay at the base -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 pointer-events-none">
+                            </div>
+                            <!-- Floating Micro-badge on portrait -->
+                            <div
+                                class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-surface/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                                <div>
+                                    <p class="font-label-code text-label-code text-primary font-bold">Mohamad Sindu
+                                        Oktorino</p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant text-xs">Software
+                                        Informatics Student &amp; Software Engineer</p>
+                                </div>
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+                                    <span class="material-symbols-outlined text-[18px]">verified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT ME SECTION -->
+        <section class="relative max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-outline-variant/20"
+            id="about">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+                <div>
+                    <div class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Background &amp;
+                        Philosophy</div>
+                    <h2
+                        class="font-headline-lg md:text-headline-lg text-headline-lg-mobile font-bold text-on-surface mt-1">
+                        About Me
+                    </h2>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                    A blend of engineering rigor, architectural curiosity, and human-centric design intuition.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Left: Candid Working Photo Card (Inspired by reference coffee shop/laptop card) -->
+                <div class="lg:col-span-5 relative group">
+                    <div
+                        class="relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl">
+                        <img class="w-full h-80 sm:h-96 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                            data-alt="A candid documentary style photograph of a focused software developer working intensely on a modern sleek black laptop in a moody, industrial-chic coffee shop. In the background, modern cafe signage reads subtly on the brick wall, illuminated by warm low-key accent lights and soft ambient neon luminescence."
+                            src="img/sindu2.jpeg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent">
+                        </div>
+                        <!-- Cafe Watermark Graphic Badge -->
+                        <div
+                            class="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md border border-white/10 font-label-code text-[11px] text-on-surface-variant tracking-wider uppercase">
+                            YOUR FLAVOR <br /><span class="text-primary font-bold">YOUR WAY</span>
+                        </div>
+                        <!-- Bottom details badge -->
+                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-surface">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+                                <span class="font-label-code text-label-code text-on-surface">Currently in flow
+                                    state</span>
+                            </div>
+                            <span class="font-label-code text-label-code text-on-surface-variant">2026</span>
+                        </div>
+                    </div>
+                    <!-- Decorative offset stroke frame -->
+                    <div
+                        class="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-primary/20 -z-10 pointer-events-none hidden sm:block">
+                    </div>
+                </div>
+                <!-- Right: Story Narrative & Stats Grid -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div
+                        class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant/30 relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">👋</span>
+                            <h3 class="font-headline-md text-headline-md text-on-surface font-bold">Hello Stranger!</h3>
+                        </div>
+                        <p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-4">
+                            My name is <strong class="text-primary font-semibold">Mohamad Sindu Oktorino</strong> and I
+                            am a skilled Software Engineer with a burning passion for designing and building robust,
+                            scalable digital solutions.
+                        </p>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            I bring a unique blend of technical depth and creative problem-solving to every project.
+                            Whether architecting cloud microservices, optimizing back-end workflows, or engineering
+                            intuitive user interfaces, I combine clean architecture with an enthusiastic spirit to help
+                            bring your ideas to life. Let me know if you would like to tweak any specific technical stack details (like languages,
+                            frameworks, or methodologies) to fit your portfolio or resume even better!
+                        </p>
+                        <!-- Key Milestones Stats Bento -->
+                        <div class="grid grid-cols-3 gap-4 pt-8 mt-6 border-t border-outline-variant/20">
+                            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20">
+                                <div class="font-headline-lg text-headline-lg font-bold text-primary">1+</div>
+                                <div class="font-label-code text-label-code text-on-surface-variant mt-1">Years Exp.
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20">
+                                <div class="font-headline-lg text-headline-lg font-bold text-secondary">7+</div>
+                                <div class="font-label-code text-label-code text-on-surface-variant mt-1">Projects Built
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20">
+                                <div class="font-headline-lg text-headline-lg font-bold text-tertiary">100%</div>
+                                <div class="font-label-code text-label-code text-on-surface-variant mt-1">Satisfaction
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SKILLS & TECHNOLOGIES SECTION (Directly matching visual tokens from reference card grid) -->
+        <section class="relative max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-outline-variant/20"
+            id="skills">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/40 font-label-code text-label-code text-primary mb-3">
+                    <span class="material-symbols-outlined text-[16px]">integration_instructions</span>
+                    <span>Core Capabilities</span>
+                </div>
+                <h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile font-bold text-on-surface">
+                    Skills &amp; Technologies
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+                    Some of the newest technologies and high-productivity tools that I use daily to build
+                    production-grade web applications.
+                </p>
+            </div>
+            <!-- Skills Cards Grid mimicking the reference's distinct dark badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Skill 1: React JS -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#00d8ff]/10 border border-[#00d8ff]/30 flex items-center justify-center text-[#00d8ff]">
+                            <span class="material-symbols-outlined text-[28px]">deployed_code</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">React JS</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Front-End Development</p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">v18+</span>
+                </div>
+                <!-- Skill 2: Laravel -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#ff2d20]/10 border border-[#ff2d20]/30 flex items-center justify-center text-[#ff2d20]">
+                            <span class="material-symbols-outlined text-[28px]">token</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Laravel</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Back-End Development</p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">PHP
+                        8.2</span>
+                </div>
+                <!-- Skill 3: Vue.js -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#42b883]/10 border border-[#42b883]/30 flex items-center justify-center text-[#42b883]">
+                            <span class="material-symbols-outlined text-[28px]">layers</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Vue</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Front-End Development</p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">Vue
+                        3</span>
+                </div>
+                <!-- Skill 4: JavaScript & TypeScript -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#f7df1e]/10 border border-[#f7df1e]/30 flex items-center justify-center text-[#f7df1e]">
+                            <span class="material-symbols-outlined text-[28px]">code_blocks</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">JavaScript</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">ESNext &amp; TypeScript
+                            </p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">Strict</span>
+                </div>
+                <!-- Skill 5: PHP -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#777bb4]/10 border border-[#777bb4]/30 flex items-center justify-center text-[#777bb4]">
+                            <span class="material-symbols-outlined text-[28px]">dns</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">PHP</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Back-End Development</p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">OOP/MVC</span>
+                </div>
+                <!-- Skill 6: Tailwind & CSS -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#38bdf8]/10 border border-[#38bdf8]/30 flex items-center justify-center text-[#38bdf8]">
+                            <span class="material-symbols-outlined text-[28px]">css</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">CSS &amp;
+                                Tailwind</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Front-End Design System
+                            </p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">CSS3</span>
+                </div>
+                <!-- Skill 7: Node.js & Express -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#68a063]/10 border border-[#68a063]/30 flex items-center justify-center text-[#68a063]">
+                            <span class="material-symbols-outlined text-[28px]">terminal</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Node.js</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Runtime &amp;
+                                Microservices</p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">REST/gRPC</span>
+                </div>
+                <!-- Skill 8: PostgreSQL & Databases -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#336791]/10 border border-[#336791]/30 flex items-center justify-center text-[#336791]">
+                            <span class="material-symbols-outlined text-[28px]">database</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">PostgreSQL</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Relational Architecture
+                            </p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">SQL</span>
+                </div>
+                <!-- Skill 9: Docker & DevOps -->
+                <div class="glass-lumina p-5 rounded-2xl flex items-center justify-between transition-all duration-200">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#2496ed]/10 border border-[#2496ed]/30 flex items-center justify-center text-[#2496ed]">
+                            <span class="material-symbols-outlined text-[28px]">view_in_ar</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Docker</h4>
+                            <p class="font-label-code text-label-code text-on-surface-variant">Containerization &amp;
+                                CI/CD</p>
+                        </div>
+                    </div>
+                    <span
+                        class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant/30">DevOps</span>
+                </div>
+            </div>
+        </section>
+        <!-- PROJECTS SECTION -->
+        <section class="relative max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-outline-variant/20"
+            id="projects">
+            <div class="mb-12">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                    Selected <span class="text-primary">Projects</span>
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                    A showcase of systems architecture and interface design.
+                </p>
+            </div>
+
+            <!--
+                CATATAN PEMILIK: Pemilik belum punya proyek nyata, jadi kartu
+                studi kasus lama (RAYYAN SOLEH NET, SaaS Analytics & Billing
+                Platform, DevFlow) dihapus dari halaman ini agar tidak
+                menyesatkan pengunjung. Markup lamanya masih tersimpan di
+                web.backup.html. Hapus catatan ini setelah proyek pertama ada.
+            -->
+            <div
+                class="rounded-3xl border border-dashed border-outline-variant/40 bg-surface-container-low/40 px-6 py-14 md:py-20 text-center">
+                <span class="material-symbols-outlined text-primary text-[44px]">rocket_launch</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-4">
+                    Projects coming soon
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-3 max-w-xl mx-auto">
+                    There are no projects to show here yet. This section will be updated as soon as the first
+                    project is finished — in the meantime, feel free to reach out.
+                </p>
+                <a class="inline-flex items-center gap-2 mt-8 px-5 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-body-md font-semibold hover:bg-primary transition-colors"
+                    href="#contact">
+                    <span>Get in touch</span>
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+        <!-- CONTACT & CALL TO ACTION SECTION -->
+        <section class="relative max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-outline-variant/40"
+            id="contact">
+            <div
+                class="relative rounded-3xl overflow-hidden bg-gradient-to-b from-surface-container to-surface-container-lowest border border-outline-variant/40 p-8 sm:p-14 md:p-20 text-center">
+                <!-- Ambient radial glow behind card -->
+                <div
+                    class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none">
+                </div>
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-primary mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span>Let's collaborate on your next release</span>
+                    </div>
+                    <h2
+                        class="font-headline-lg md:text-headline-lg text-headline-lg-mobile font-extrabold text-on-surface tracking-tight leading-tight">
+                        Ready to turn your concepts into clean, battle-tested software?
+                    </h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl mx-auto">
+                        Whether you have an ambitious product roadmap, need full-stack architectural leadership, or
+                        desire a polished front-end design overhaul, my inbox is always open.
+                    </p>
+                    <!-- Interactive Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                        <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-semibold hover:bg-primary transition-all duration-200 shadow-lg shadow-primary/20 active:scale-95"
+                            href="mailto:tohari.dev@gmail.com">
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                            <span>Say Hello Directly</span>
+                        </a>
+                        <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-surface-bright border border-outline-variant/40 text-on-surface font-headline-sm text-headline-sm font-medium transition-all duration-200 active:scale-95"
+                            href="https://calendly.com" rel="noopener noreferrer" target="_blank">
+                            <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                            <span>Book an Intro Call</span>
+                        </a>
+                    </div>
+                    <!-- Direct contact info chips -->
+                    <div
+                        class="flex flex-wrap items-center justify-center gap-6 mt-10 pt-8 border-t border-outline-variant/20 font-label-code text-label-code text-on-surface-variant">
+                        <span class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+                            UTC+7 Response Time &lt; 12h
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+                            Available for Contract &amp; Full-Time
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- FORM KONTAK -> DATABASE
+             Disimpan sebagai baris baru di db/portfolio.db lewat POST /api/contact
+             (server.js). Pengiriman dikendalikan oleh js/main.js; tanpa server,
+             pesan TIDAK terkirim dan pengguna diberi tahu dengan jujur. -->
+            <div class="relative max-w-7xl mx-auto px-6 md:px-12 mt-12">
+                <form
+                    class="relative rounded-3xl overflow-hidden bg-gradient-to-b from-surface-container to-surface-container-lowest border border-outline-variant/40 p-8 sm:p-10 md:p-12"
+                    action="/api/contact"
+                    data-success-message="Message saved to the database. I will get back to you soon." id="contactForm"
+                    method="post">
+                    <div
+                        class="absolute -top-24 right-10 w-72 h-72 bg-secondary/15 rounded-full blur-[110px] pointer-events-none">
+                    </div>
+                    <div class="relative z-10 max-w-2xl mx-auto">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-tertiary mb-6">
+                            <span class="material-symbols-outlined text-[16px]">edit_note</span>
+                            <span>OR SEND A MESSAGE BELOW</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md font-extrabold text-on-surface tracking-tight">
+                            Write me a message
+                        </h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2 mb-8">
+                            Your message is stored in this portfolio&rsquo;s database and is never shown publicly.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="font-label-code text-label-code text-on-surface-variant"
+                                    for="contactName">Name *</label>
+                                <input
+                                    class="mt-2 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                    id="contactName" maxlength="200" name="name" placeholder="Your full name" required
+                                    type="text" />
+                            </div>
+                            <div>
+                                <label class="font-label-code text-label-code text-on-surface-variant"
+                                    for="contactEmail">Email *</label>
+                                <input
+                                    class="mt-2 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                    id="contactEmail" maxlength="320" name="email" placeholder="you@example.com"
+                                    required type="email" />
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <label class="font-label-code text-label-code text-on-surface-variant"
+                                for="contactSubject">Subject</label>
+                            <input
+                                class="mt-2 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                id="contactSubject" maxlength="300" name="subject"
+                                placeholder="Project, role, or question" type="text" />
+                        </div>
+                        <div class="mt-5">
+                            <label class="font-label-code text-label-code text-on-surface-variant"
+                                for="contactMessage">Message *</label>
+                            <textarea
+                                class="mt-2 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
+                                id="contactMessage" maxlength="5000" name="message"
+                                placeholder="Tell me about your project…" required rows="5"></textarea>
+                        </div>
+                        <button
+                            class="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-semibold hover:bg-primary transition-all duration-200 shadow-lg shadow-primary/20 active:scale-95 disabled:opacity-60"
+                            type="submit">
+                            <span class="material-symbols-outlined text-[20px]">send</span>
+                            <span>Send Message</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Shared Component: Footer -->
+    <footer
+        class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20 transition-all duration-200">
+        <div class="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-10 max-w-7xl mx-auto gap-6">
+            <!-- Logo & Copyright Text (Exact string preserved from JSON) -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                <span class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-on-surface">
+                    Mohamad Sindu Oktorino
+                </span>
+                <span class="hidden sm:inline text-outline-variant/40">|</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant">
+                    © 2026 Mohamad Sindu Oktorino. All rights reserved.
+                </p>
+            </div>
+            <!-- Navigation Links from JSON Blueprint -->
+            <div class="flex items-center gap-6">
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors hover:text-primary font-label-code text-label-code"
+                    href="#about">About</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors hover:text-primary font-label-code text-label-code"
+                    href="#skills">Skills</a>
+                <a class="text-primary dark:text-primary font-medium font-label-code text-label-code"
+                    href="#projects">Projects</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors hover:text-primary font-label-code text-label-code"
+                    href="#contact">Contact</a>
+            </div>
+            <!-- Footer Social Icons & Back to top -->
+            <div class="flex items-center gap-3">
+                <a aria-label="Instagram"
+                    class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors"
+                    href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">photo_camera</span>
+                </a>
+                <a aria-label="GitHub"
+                    class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors"
+                    href="https://github.com" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">code</span>
+                </a>
+                <a aria-label="LinkedIn"
+                    class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors"
+                    href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">work</span>
+                </a>
+                <a aria-label="Back to top"
+                    class="w-8 h-8 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary flex items-center justify-center transition-colors ml-2"
+                    href="#hero" title="Back to top">
+                    <span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Interaksi bersama: drawer navigasi + kirim form kontak -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mohamad Sindu Oktorino — Informatics Student &amp; Software Engineer</title>
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS: salinan lokal, jadi halaman tetap tampil benar tanpa internet -->
+    <script src="js/tailwind-cdn.js?plugins=forms,container-queries"></script>
+    <!-- Konfigurasi Tailwind (dipisah ke js/tailwind.config.js) -->
+    <script src="js/tailwind.config.js"></script>
+    <!-- Gaya kustom dipisah ke css/style.css -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container font-body-md text-body-md overflow-x-hidden min-h-screen flex flex-col justify-between">
+    <!-- Ambient Background Glows -->
+    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div class="absolute -top-32 -left-32 w-80 h-80 rounded-full bg-primary/10 blur-[120px]"></div>
+        <div class="absolute top-[40%] -right-24 w-96 h-96 rounded-full bg-secondary-container/15 blur-[140px]"></div>
+        <div class="absolute bottom-10 left-10 w-72 h-72 rounded-full bg-tertiary-container/10 blur-[130px]"></div>
+    </div>
+    <!-- Shared Component: TopAppBar (Docked Full-width Sticky) -->
+    <header
+        class="bg-background/80 dark:bg-background/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 flat no shadows">
+        <div class="flex justify-between items-center w-full px-5 py-4 max-w-7xl mx-auto">
+            <!-- Brand Anchor & Identity -->
+            <a class="flex items-center gap-2.5 group" href="#hero">
+                <div
+                    class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary dark:text-primary group-hover:border-primary/50 transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">terminal</span>
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-surface tracking-tighter leading-none">MTM</span>
+                    <span class="font-label-caps text-[10px] text-on-surface-variant tracking-wider">DEV.UI</span>
+                </div>
+            </a>
+            <!-- Compact Availability Badge & Drawer Toggle -->
+            <div class="flex items-center gap-3">
+                <!-- Available status pill -->
+                <div
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low border border-emerald-500/25">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="font-label-caps text-[10px] text-emerald-300">Available</span>
+                </div>
+                <!-- Mobile Drawer Toggle Button -->
+                <button aria-label="Open Navigation Drawer"
+                    class="p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-primary active:scale-95 transition-all duration-150"
+                    id="drawer-toggle">
+                    <span class="material-symbols-outlined text-[20px]">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Navigation Drawer (Shared Component) - Mobile Backdrop & Drawer -->
+    <div class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"
+        id="drawer-backdrop">
+        <div class="fixed inset-y-0 right-0 w-80 z-50 bg-surface-container-low dark:bg-surface-container-low border-l border-outline-variant/30 dark:border-outline-variant/30 shadow-2xl dark:shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col h-full p-6"
+            id="nav-drawer">
+            <!-- Drawer Header with Profile -->
+            <div class="flex justify-between items-start pb-6 border-b border-outline-variant/20">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full overflow-hidden border border-primary/30 relative">
+                        <img alt="Mohamad Tohari Maolana portrait thumbnail" class="w-full h-full object-cover"
+                            data-alt="Intense monochrome studio portrait of Mohamad Tohari Maolana, a visionary Asian male software engineer with glasses, professional dark attire, set against a low key studio light background."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxmfqBkFISvB0PPI1gfKeomvKGvwM7LZpqA0tsh866w6CEM-5i_sCwuGR5a8cgFK9mrRAW8Y8MSdW96sIhYd_eQI1zdgwUFMilsBefUtGvR5baxpFCrXiQ_jZAY1YnKXjDqEWJgvaKe_r_R5EKMCje_mtPyuak9Rxiri72rxHxOj8AnfjDn-gZGdsDWw688zVx3hyz77VWB1tsmbh9NRxU5IA-0WLu3nw8sQEnv--rtQrQf_C8VGk6DA" />
+                    </div>
+                    <div>
+                        <h4 class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-surface">
+                            Mohamad Tohari M.</h4>
+                        <p class="text-body-sm font-body-sm text-on-surface-variant">Software Engineer &amp; UI
+                            Architect</p>
+                        <span
+                            class="inline-flex items-center gap-1 font-label-caps text-[10px] text-emerald-400 mt-0.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available for Work
+                        </span>
+                    </div>
+                </div>
+                <button aria-label="Close menu" class="text-on-surface-variant hover:text-on-surface p-1"
+                    id="drawer-close">
+                    <span class="material-symbols-outlined text-[22px]">close</span>
+                </button>
+            </div>
+            <!-- Navigation Tabs (from JSON) -->
+            <nav class="flex flex-col gap-2 py-6">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-highest dark:bg-surface-container-highest text-primary dark:text-primary font-medium hover:bg-surface-container-high transition-colors active:scale-98"
+                    href="#about">
+                    <span class="material-symbols-outlined text-[20px]">person</span>
+                    <span class="text-label-caps font-label-caps">About</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors active:scale-98"
+                    href="#skills">
+                    <span class="material-symbols-outlined text-[20px]">code</span>
+                    <span class="text-label-caps font-label-caps">Skills</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors active:scale-98"
+                    href="#projects">
+                    <span class="material-symbols-outlined text-[20px]">folder_open</span>
+                    <span class="text-label-caps font-label-caps">Projects</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors active:scale-98"
+                    href="#contact">
+                    <span class="material-symbols-outlined text-[20px]">mail</span>
+                    <span class="text-label-caps font-label-caps">Contact</span>
+                </a>
+            </nav>
+            <!-- Drawer Footer CTA -->
+            <div class="mt-auto pt-6 border-t border-outline-variant/20 flex flex-col gap-3">
+                <a class="w-full py-3 px-4 rounded-xl bg-primary text-on-primary font-headline-sm text-center text-sm font-semibold tracking-wide shadow-lg shadow-primary/20 active:scale-95 transition-transform"
+                    href="#contact">
+                    Get in touch
+                </a>
+                <div class="flex items-center justify-center gap-4 text-on-surface-variant text-sm font-label-caps">
+                    <a class="hover:text-primary transition-colors" href="#">GitHub</a>
+                    <span>•</span>
+                    <a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+                    <span>•</span>
+                    <a class="hover:text-primary transition-colors" href="#">Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="w-full max-w-7xl mx-auto px-5 pb-16 flex-1 flex flex-col gap-20">
+        <!-- HERO SECTION (Mobile Optimized) -->
+        <section class="pt-6 sm:pt-12 flex flex-col items-start relative" id="hero">
+            <!-- Badge Pill -->
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30 mb-6">
+                <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                <span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Full-Stack Engineer
+                    &amp; UI Artisan</span>
+            </div>
+            <!-- Impact Display Headline -->
+            <h1 class="font-display-mobile text-display-mobile tracking-tight text-on-surface font-extrabold mb-4">
+                turning ideas into real life products is my <span
+                    class="text-gradient-accent underline decoration-primary/40 underline-offset-4">calling</span>
+            </h1>
+            <!-- Supporting Editorial Copy -->
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mb-6 leading-relaxed">
+                Crafting resilient web architectures, sleek interactive client apps, and high-performance digital tools
+                with deep attention to developer ergonomics and visual mastery.
+            </p>
+            <!-- Core Focus Tech Tags -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <span
+                    class="px-2.5 py-1 rounded-md bg-surface-container-high/60 border border-outline-variant/20 font-label-code text-xs text-on-surface-variant flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs text-tertiary">terminal</span> TypeScript &amp; Go
+                </span>
+                <span
+                    class="px-2.5 py-1 rounded-md bg-surface-container-high/60 border border-outline-variant/20 font-label-code text-xs text-on-surface-variant flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs text-primary">public</span> Remote / Global
+                </span>
+                <span
+                    class="px-2.5 py-1 rounded-md bg-surface-container-high/60 border border-outline-variant/20 font-label-code text-xs text-on-surface-variant flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs text-secondary">layers</span> Full-Stack SaaS
+                </span>
+            </div>
+            <!-- Developer Organic Portrait Showcase -->
+            <div class="w-full flex flex-col items-center justify-center my-4 relative">
+                <!-- Luminescent ambient ring -->
+                <div class="absolute w-64 h-64 rounded-full bg-primary/20 blur-2xl -z-10"></div>
+                <div
+                    class="relative w-64 h-72 sm:w-72 sm:h-80 contour-organic p-1.5 bg-gradient-to-tr from-primary/40 via-secondary/20 to-tertiary/40 shadow-2xl overflow-hidden border border-outline-variant/40">
+                    <div class="w-full h-full contour-organic overflow-hidden bg-surface-container-lowest">
+                        <img alt="Mohamad Tohari Maolana Software Engineer &amp; UI Architect"
+                            class="w-full h-full object-cover grayscale contrast-125 object-top"
+                            data-alt="Monochromatic charismatic editorial photo of young male software developer Mohamad Tohari Maolana smiling warmly in modern dark blazer against deep charcoal background, subtle studio light catching shoulder and hair, minimalistic dark luxury portfolio style."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUmdf3YSQXWKj0A9X5nvhyAe1BDC6iY-JNIOGQweAzfKX1BgHTnEtjDaBibqa1AH27PonA3doMYTLPfsEnb9OM5OOIfQedQCoDVwhcN925t10AYqkEVfl7AosRDDb411z0mq-lvTXb1YtVcDZbEpA9XXsK0Db-vy4aiGHRmAPkjCEbIjOtM6HrwzUpsNhiRObr3FmNBQIY3dT8YAFMr2xN7THm08vqWw6pO-JKutER9sSkO1Pn-_ngZg" />
+                    </div>
+                </div>
+                <!-- Organic Floating Contour Ring Decorator -->
+                <div
+                    class="absolute -bottom-4 right-6 px-3 py-1.5 rounded-full bg-surface-container-highest/90 backdrop-blur-md border border-outline-variant/40 flex items-center gap-2 shadow-lg">
+                    <span class="material-symbols-outlined text-tertiary text-sm">verified</span>
+                    <span class="font-label-caps text-[11px] text-on-surface">Mohamad Tohari M.</span>
+                </div>
+            </div>
+            <!-- Social Icon Row & Primary CTAs -->
+            <div
+                class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-outline-variant/20 mt-4">
+                <!-- Quick Social Connects -->
+                <div class="flex items-center gap-2 w-full sm:w-auto justify-center">
+                    <a aria-label="GitHub Profile"
+                        class="p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-colors"
+                        href="https://github.com" rel="noopener" target="_blank">
+                        <span class="material-symbols-outlined text-[20px]">code</span>
+                    </a>
+                    <a aria-label="LinkedIn Profile"
+                        class="p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-colors"
+                        href="https://linkedin.com" rel="noopener" target="_blank">
+                        <span class="material-symbols-outlined text-[20px]">link</span>
+                    </a>
+                    <a aria-label="Direct Email"
+                        class="p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-colors"
+                        href="mailto:contact@mohamadtohari.dev">
+                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                    </a>
+                    <a aria-label="Instagram Profile"
+                        class="p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-colors"
+                        href="https://instagram.com" rel="noopener" target="_blank">
+                        <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                    </a>
+                </div>
+                <!-- CTA Buttons Group -->
+                <div class="flex items-center gap-3 w-full sm:w-auto">
+                    <a class="flex-1 sm:flex-none text-center px-5 py-3 rounded-xl bg-primary text-on-primary font-headline-sm text-sm font-semibold tracking-wide shadow-md shadow-primary/20 hover:brightness-110 active:scale-95 transition-all"
+                        href="#projects">
+                        Explore Work
+                    </a>
+                    <a class="flex-1 sm:flex-none text-center px-5 py-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface font-headline-sm text-sm font-medium hover:border-primary/40 active:scale-95 transition-all"
+                        href="#contact">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT ME SECTION -->
+        <section class="scroll-mt-24" id="about">
+            <div class="flex flex-col gap-2 mb-6">
+                <span class="font-label-caps text-xs text-primary tracking-widest uppercase">BACKGROUND &amp;
+                    PHILOSOPHY</span>
+                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">About Me</h2>
+            </div>
+            <!-- Bento Layout for Mobile: Photo & Narrative -->
+            <div class="flex flex-col gap-5">
+                <!-- Workspace Candid Photo Card -->
+                <div class="glass-card rounded-2xl p-3 border border-outline-variant/20 overflow-hidden relative group">
+                    <div class="w-full h-56 rounded-xl overflow-hidden relative">
+                        <img alt="Developer Mohamad Tohari Maolana working on laptop in cafe"
+                            class="w-full h-full object-cover grayscale contrast-125"
+                            data-alt="Black and white candid photograph of Mohamad Tohari Maolana deeply focused coding on a slim black laptop in a moody modern coffee shop workspace with minimal ambient lighting and neon signage blurred in background."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWiU9gSvZK5wUFcRS0hlxWOB1ZVYn8h1ZjzVkTm1gkmaZUkGcx3ydyHGESF4oq-8osI6JzjCfb4ubDf85xcX9gFQCyfNmzaH9MI9X__e505g3pxtoZgoiYlWJimmzKVkZo6SypDNxqW56NVaEQ1VGn_BtdTRTveo2cGjLNBnhWvr8JfZPA-6BR1VzkimTXa2VCOVNZQPQpvz7CmIOeURdpBqp5jJ7wkUn1QTa-IArPNYTniMm06vDpcg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        </div>
+                        <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span
+                                class="font-label-code text-xs text-on-surface-variant bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-outline-variant/30">Currently
+                                in flow state</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Greeting Narrative Card -->
+                <div class="glass-card rounded-2xl p-6 border border-outline-variant/20 flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Hello Stranger! 👋
+                        </h3>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        My name is <strong class="text-on-surface font-semibold">Mohamad Tohari Maolana</strong> and I
+                        am a skilled web developer and UI designer with a burning passion for creating seamless digital
+                        experiences.
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        I bring a unique blend of creativity and technical expertise to every project. With an
+                        enthusiastic spirit and obsession with craft, I am ready to help bring your ideas to life.
+                    </p>
+                    <!-- Key Metrics Grid in 3 Compact Cards -->
+                    <div class="grid grid-cols-3 gap-2.5 pt-3 border-t border-outline-variant/20">
+                        <div
+                            class="p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/20 flex flex-col items-center text-center">
+                            <span class="font-headline-sm text-lg font-bold text-primary">3+</span>
+                            <span class="font-label-caps text-[10px] text-on-surface-variant uppercase mt-1">Years
+                                Exp.</span>
+                        </div>
+                        <div
+                            class="p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/20 flex flex-col items-center text-center">
+                            <span class="font-headline-sm text-lg font-bold text-tertiary">25+</span>
+                            <span class="font-label-caps text-[10px] text-on-surface-variant uppercase mt-1">Projects
+                                Built</span>
+                        </div>
+                        <div
+                            class="p-3 rounded-xl bg-surface-container-high/40 border border-outline-variant/20 flex flex-col items-center text-center">
+                            <span class="font-headline-sm text-lg font-bold text-secondary">100%</span>
+                            <span
+                                class="font-label-caps text-[10px] text-on-surface-variant uppercase mt-1">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SKILLS & TECHNOLOGIES SECTION -->
+        <section class="scroll-mt-24" id="skills">
+            <div class="flex flex-col gap-2 mb-6">
+                <div class="flex items-center justify-between">
+                    <span class="font-label-caps text-xs text-tertiary tracking-widest uppercase">Core
+                        Capabilities</span>
+                    <span class="font-label-code text-xs text-on-surface-variant">v2025.stack</span>
+                </div>
+                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Skills &amp;
+                    Technologies</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Modern, battle-tested toolchains used
+                    across production ecosystems.</p>
+            </div>
+            <!-- 2-Column High-Density Grid for Mobile -->
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Skill 1: React JS -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-tertiary">
+                            <span class="material-symbols-outlined text-[20px]">layers</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-tertiary font-semibold">v18+</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">React JS</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Front-End Architecture</p>
+                    </div>
+                </div>
+                <!-- Skill 2: Laravel -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-rose-400">
+                            <span class="material-symbols-outlined text-[20px]">deployed_code</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-rose-300 font-semibold">v11</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Laravel</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Back-End Core</p>
+                    </div>
+                </div>
+                <!-- Skill 3: Vue -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-emerald-400">
+                            <span class="material-symbols-outlined text-[20px]">splitscreen</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-emerald-300 font-semibold">v3</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Vue.js</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Progressive UI</p>
+                    </div>
+                </div>
+                <!-- Skill 4: TypeScript & JavaScript -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-amber-300">
+                            <span class="material-symbols-outlined text-[20px]">code_blocks</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-amber-300 font-semibold">TS/ES6</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">JavaScript</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Strict Typing</p>
+                    </div>
+                </div>
+                <!-- Skill 5: PHP -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-primary">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-primary font-semibold">8.3+</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">PHP</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Server Runtime</p>
+                    </div>
+                </div>
+                <!-- Skill 6: CSS & Tailwind -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-cyan-400">
+                            <span class="material-symbols-outlined text-[20px]">palette</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-cyan-300 font-semibold">Tailwind</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">CSS3 &amp; UI</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Modern Layouts</p>
+                    </div>
+                </div>
+                <!-- Skill 7: Node.js & APIs -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-emerald-400">
+                            <span class="material-symbols-outlined text-[20px]">data_object</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-emerald-300 font-semibold">REST/RPC</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Node.js</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Microservices</p>
+                    </div>
+                </div>
+                <!-- Skill 8: MySQL & Postgres -->
+                <div class="glass-card-interactive rounded-xl p-3.5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 text-secondary">
+                            <span class="material-symbols-outlined text-[20px]">database</span>
+                        </div>
+                        <span class="font-label-code text-[11px] text-secondary font-semibold">SQL</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Databases</h4>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">Relational Stores</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PROJECTS SECTION -->
+        <section class="scroll-mt-24" id="projects">
+            <div class="flex flex-col gap-2 mb-4">
+                <span class="font-label-caps text-xs text-primary tracking-widest uppercase">PORTFOLIO SHOWCASES</span>
+                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Projects</h2>
+            </div>
+
+            <!--
+                CATATAN PEMILIK: Pemilik belum punya proyek nyata, jadi kartu
+                studi kasus lama (RAYYAN SOLEH NET, SaaS Analytics & Billing
+                Platform, DevFlow) dihapus dari halaman ini agar tidak
+                menyesatkan pengunjung. Markup lamanya masih tersimpan di
+                mobile.backup.html. Hapus catatan ini setelah proyek pertama ada.
+            -->
+            <div class="glass-card rounded-2xl px-5 py-10 text-center flex flex-col items-center">
+                <span class="material-symbols-outlined text-primary text-[40px]">rocket_launch</span>
+                <h3 class="font-headline-sm text-lg font-bold text-on-surface mt-3">
+                    Projects coming soon
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                    There are no projects to show here yet. This section will be updated as soon as the first
+                    project is finished — in the meantime, feel free to reach out.
+                </p>
+                <a class="inline-flex items-center gap-2 mt-6 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-caps text-xs font-semibold"
+                    href="#contact">
+                    <span>Get in touch</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+        <!-- CONTACT & ENGAGEMENT SECTION -->
+        <section class="scroll-mt-24 pt-8 border-t border-outline-variant/40" id="contact">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-outline-variant/30 relative overflow-hidden">
+                <!-- Glow highlight -->
+                <div
+                    class="absolute -top-16 -right-16 w-48 h-48 bg-primary/25 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div class="flex flex-col gap-4 relative z-10">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 w-fit">
+                        <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                        <span class="font-label-caps text-[10px] text-tertiary">Direct Inquiry</span>
+                    </div>
+                    <h2
+                        class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+                        Ready to turn your concepts into clean, battle-tested software?
+                    </h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Whether you need a dedicated senior full-stack engineer, an architectural refactor, or a
+                        high-converting digital design system, my terminal is open.
+                    </p>
+                    <!-- Direct CTA buttons -->
+                    <div class="flex flex-col gap-3 pt-2">
+                        <a class="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-headline-sm text-sm font-bold text-center tracking-wide shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2"
+                            href="mailto:contact@mohamadtohari.dev">
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                            <span>Say Hello Directly</span>
+                        </a>
+                        <a class="w-full py-3.5 px-5 rounded-xl bg-surface-container-high border border-outline-variant/40 text-on-surface font-headline-sm text-sm font-semibold text-center hover:bg-surface-container-highest active:scale-95 transition-all flex items-center justify-center gap-2"
+                            href="https://cal.com" rel="noopener" target="_blank">
+                            <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                            <span>Book an Intro Call (15m)</span>
+                        </a>
+                    </div>
+                    <!-- Availability & Timezone Details -->
+                    <div
+                        class="pt-4 border-t border-outline-variant/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-on-surface-variant font-label-code text-xs">
+                        <span class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm text-emerald-400">schedule</span>
+                            UTC+7 • Response Time &lt; 12h
+                        </span>
+                        <span class="text-tertiary">Available for Contract &amp; Full-Time</span>
+                    </div>
+                </div>
+            </div>
+        <!-- FORM KONTAK -> DATABASE
+             Disimpan sebagai baris baru di db/portfolio.db lewat POST /api/contact
+             (server.js). Pengiriman dikendalikan oleh js/main.js; tanpa server,
+             pesan TIDAK terkirim dan pengguna diberi tahu dengan jujur. -->
+        <div class="mt-6">
+            <form class="glass-card rounded-3xl p-6 sm:p-8 border border-outline-variant/30 relative overflow-hidden"
+                action="/api/contact" data-success-message="Message saved to the database. I will get back to you soon."
+                id="contactForm" method="post">
+                <div class="flex flex-col gap-4 relative z-10">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 w-fit">
+                        <span class="material-symbols-outlined text-sm text-secondary">edit_note</span>
+                        <span class="font-label-caps text-[10px] text-secondary">Or send a message below</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+                        Write me a message
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Your message is stored in this portfolio&rsquo;s database and is never shown publicly.
+                    </p>
+                    <div>
+                        <label class="font-label-code text-xs text-on-surface-variant" for="contactName">Name
+                            *</label>
+                        <input class="mt-1.5 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                            id="contactName" maxlength="200" name="name" placeholder="Your full name" required
+                            type="text" />
+                    </div>
+                    <div>
+                        <label class="font-label-code text-xs text-on-surface-variant" for="contactEmail">Email
+                            *</label>
+                        <input class="mt-1.5 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                            id="contactEmail" maxlength="320" name="email" placeholder="you@example.com"
+                            required type="email" />
+                    </div>
+                    <div>
+                        <label class="font-label-code text-xs text-on-surface-variant"
+                            for="contactSubject">Subject</label>
+                        <input class="mt-1.5 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                            id="contactSubject" maxlength="300" name="subject"
+                            placeholder="Project, role, or question" type="text" />
+                    </div>
+                    <div>
+                        <label class="font-label-code text-xs text-on-surface-variant" for="contactMessage">Message
+                            *</label>
+                        <textarea class="mt-1.5 block w-full rounded-xl bg-surface-container-low border border-outline-variant/40 px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline transition-colors focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
+                            id="contactMessage" maxlength="5000" name="message"
+                            placeholder="Tell me about your project…" required rows="5"></textarea>
+                    </div>
+                    <button
+                        class="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-headline-sm text-sm font-bold text-center tracking-wide shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2 disabled:opacity-60"
+                        type="submit">
+                        <span class="material-symbols-outlined text-[20px]">send</span>
+                        <span>Send Message</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        </section>
+    </main>
+    <!-- Shared Component: Footer (Mobile Stacked & Centered) -->
+    <footer
+        class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20 flat no shadows mt-12">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 px-5 py-8 max-w-7xl mx-auto">
+            <!-- Brand & Copyright from JSON -->
+            <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+                <span
+                    class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-surface tracking-tighter">MTM</span>
+                <span class="hidden sm:inline text-outline-variant">|</span>
+                <p class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-surface-variant">
+                    © 2024 Mohamad Tohari Maolana. All rights reserved.
+                </p>
+            </div>
+            <!-- Footer Links from JSON: GitHub, LinkedIn, Email -->
+            <div class="flex items-center gap-6 font-label-caps text-label-caps">
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 active:opacity-80"
+                    href="https://github.com" rel="noopener" target="_blank">
+                    GitHub
+                </a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 active:opacity-80"
+                    href="https://linkedin.com" rel="noopener" target="_blank">
+                    LinkedIn
+                </a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 active:opacity-80"
+                    href="mailto:contact@mohamadtohari.dev">
+                    Email
+                </a>
+            </div>
+            <!-- Quick Back-to-Top Button -->
+            <a aria-label="Scroll back to top"
+                class="p-2 rounded-lg bg-surface-container-low border border-outline-variant/20 text-on-surface-variant hover:text-primary transition-colors"
+                href="#hero">
+                <span class="material-symbols-outlined text-[18px]">keyboard_arrow_up</span>
+            </a>
+        </div>
+    </footer>
+    <!-- Interaksi bersama: drawer navigasi + kirim form kontak -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
