@@ -1,8 +1,10 @@
 # Mohamad Sindu Oktorino
 
 <div align="center">
+  <img src="img/sindu1.jpeg" alt="Mohamad Sindu Oktorino" width="220" />
+</div>
 
-![Mohamad Sindu Oktorino](img/sindu1.jpeg)
+<div align="center">
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-00C2FF?style=for-the-badge&logo=globe)](http://localhost:3000/)
 [![Open to Work](https://img.shields.io/badge/Open%20to%20Work-Available-brightgreen?style=for-the-badge)](mailto:contact@sinduoktorino70@gmail.com)
