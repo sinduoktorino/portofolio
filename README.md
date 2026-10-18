@@ -1,72 +1,64 @@
-# Portofolio Saya — Mohamad Sindu Oktorino
+# Mohamad Sindu Oktorino
 
-Halo teman teman, saya adalah Mohamad Sindu Oktorino. Saya adalah mahasiswa Informatika dan Software Engineer yang tertarik pada pengembangan aplikasi web, sistem digital, dan pengalaman pengguna yang bersih, cepat, dan mudah dipahami.
+<div align="center">
 
-Portfolio ini dibuat sebagai ruang untuk memperkenalkan diri saya, kemampuan saya, serta cara saya berpikir dalam membangun solusi teknologi yang bermanfaat.
+![Mohamad Sindu Oktorino](img/sindu1.jpeg)
 
----
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00C2FF?style=for-the-badge&logo=globe)](http://localhost:3000/)
+[![Open to Work](https://img.shields.io/badge/Open%20to%20Work-Available-brightgreen?style=for-the-badge)](mailto:contact@sinduoktorino70@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-sinduoktorino-181717?style=for-the-badge&logo=github)](https://github.com/sinduoktorino)
 
-## Tentang Saya
+</div>
 
-Saya adalah seseorang yang senang memecahkan masalah dengan teknologi. Saya suka membangun produk dari ide sederhana menjadi solusi yang nyata, baik itu website, interface yang rapi, maupun alur kerja yang lebih efisien.
+> Mahasiswa Informatika & Software Engineer yang suka membangun produk digital yang responsif, berguna, dan berkesan.
 
-Saya memiliki minat kuat di bidang:
+## ✨ Tentang Saya
 
-- Pengembangan web
-- Desain antarmuka (UI/UX)
-- Front-end engineering
-- Backend sederhana dan API
-- Produktivitas digital dan automatisasi
+Saya adalah seorang mahasiswa informatika yang tertarik pada dunia web, desain antarmuka, dan teknologi yang membuat pengalaman pengguna terasa lebih nyaman. Saya suka mengubah ide menjadi solusi nyata, mulai dari struktur logika, tampilan visual, hingga pengalaman interaksi yang lebih smooth.
 
-Saya percaya bahwa teknologi bukan hanya soal kode, tetapi juga tentang memahami kebutuhan pengguna, merancang pengalaman yang nyaman, dan menciptakan hasil yang berdampak.
+Saya percaya bahwa teknologi terbaik bukan hanya yang canggih, tetapi yang benar-benar membantu orang saat digunakan.
 
----
-
-## Fokus Saya
-
-Saya fokus pada pembuatan produk digital yang:
-
-- cepat dan responsif
-- mudah digunakan
-- terdokumentasi dengan baik
-- dapat berkembang sesuai kebutuhan
-- memiliki tampilan yang profesional dan modern
-
-Saya suka bekerja pada proyek yang menggabungkan logika teknis dan estetika visual, karena menurut saya solusi terbaik lahir ketika keduanya berjalan seimbang.
+### Fokus saya:
+- Front-end development
+- Web application engineering
+- Backend sederhana dan API dasar
+- Produktivitas digital
 
 ---
 
-## Teknologi yang Saya Gunakan
+## 🧠 Skills & Stack
 
-Berikut beberapa teknologi dan alat yang saya gunakan dalam proses pengembangan:
+### Frontend
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=flat-square&logo=tailwind-css&logoColor=white)
 
-- HTML, CSS, JavaScript
-- Tailwind CSS
-- Node.js
-- SQLite
-- Git & GitHub
-- API sederhana dan komunikasi client-server
-- Responsive design untuk berbagai layar
+### Backend & Tools
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
-Saya terus belajar dan mengikuti perkembangan teknologi agar skill yang saya miliki tetap relevan dengan kebutuhan zaman.
+### Strengths
+- Responsive design
+- Clean code mindset
+- Problem solving
+- UI/UX awareness
+- Fast learning
 
 ---
 
-## Proyek yang Saya Bangun
+## 📌 Project Highlights
 
-Portfolio ini merupakan salah satu bentuk proyek saya untuk menunjukkan identitas dan kemampuan saya sebagai developer. Di dalamnya saya menampilkan:
-
-- profil personal
-- kemampuan teknis
-- pendekatan desain dan pengembangan
-- cara saya berkomunikasi melalui web
+Portfolio ini adalah salah satu bentuk karya saya yang menampilkan:
+- profil diri
+- skill
+- tampilan yang modern dan bersih
 - form kontak yang terhubung ke backend sederhana
+- pengalaman pengguna yang responsif di desktop dan mobile
 
-Meskipun proyek ini masih bersifat personal, saya terus berusaha menambahkan pengalaman nyata dan karya yang lebih kuat di masa depan.
-
----
-
-## Struktur Proyek
+### Struktur proyek
 
 ```bash
 portofolio/
@@ -88,55 +80,52 @@ portofolio/
 └─ ...
 ```
 
-Pada proyek ini, saya membangun halaman portfolio yang bisa menampilkan profil saya, kemampuan teknis, serta media kontak dengan tampilan yang modern dan rapi.
-
 ---
 
-## Cara Menjalankan Proyek Ini
+## 🚀 Cara Menjalankan
 
 ```bash
 cd portofolio
 node server.js
 ```
 
-Setelah server berjalan, buka:
+Lalu buka:
 
-- `http://localhost:3000/` untuk versi desktop
-- `http://localhost:3000/mobile.html` untuk versi mobile
-
-Saya juga menyediakan fitur form kontak agar pengunjung dapat menghubungi saya melalui website. Jika server tidak aktif, form tidak dapat dikirim, namun halaman tetap bisa dibuka untuk melihat profil saya.
+- `http://localhost:3000/` → versi desktop
+- `http://localhost:3000/mobile.html` → versi mobile
 
 ---
 
-## Keahlian yang Saya Bangun
+## 📈 Statistik Singkat
 
-Saya terus mengembangkan kemampuan di beberapa area berikut:
+<div align="center">
 
-- membangun antarmuka yang bersih dan responsif
-- menulis struktur kode yang lebih rapi dan mudah dipelihara
-- memahami kebutuhan pengguna sebelum membuat solusi
-- berpikir sistematis dalam menyelesaikan masalah
-- mengintegrasikan frontend dan backend sederhana
+| Aspek | Nilai |
+|---|---:|
+| Fokus | Web Development |
+| Gaya kerja | Clean, structured, user-first |
+| Minat utama | UI/UX + Front-end |
+| Karakter | Detail-oriented, fast learner |
 
-Saya percaya bahwa proses belajar itu terus berjalan, dan saya selalu ingin berkembang lebih baik setiap harinya.
+</div>
 
 ---
 
-## Kontak Saya
+## 🤝 Let’s Connect
 
-Saya terbuka untuk kolaborasi, project, maupun diskusi tentang teknologi dan pengembangan produk.
+Saya terbuka untuk kolaborasi, diskusi, maupun peluang kerja yang relevan.
 
 - Email: `contact@sinduoktorino70@gmail.com`
 - GitHub: `https://github.com/sinduoktorino`
-- Instagram: `https://instagram.com`
+- Instagram: `https://instagram.com/okto.rino_`
 
-Saya senang berdiskusi tentang ide, pekerjaan, atau solusi digital yang bisa dibuat bersama.
+Jika Anda mencari seseorang yang peduli dengan kualitas, tampilan, dan pengalaman pengguna, mari berdiskusi.
 
 ---
 
-## Penutup
+<div align="center">
 
-Saya bukan hanya seorang pengembang yang menulis kode, tetapi juga seseorang yang ingin menciptakan solusi yang bermanfaat, rapi, dan berdampak. Portfolio ini adalah representasi kecil dari perjalanan saya dalam belajar, berinovasi, dan terus berkembang di dunia teknologi.
+Made with ❤️ by <strong>Mohamad Sindu Oktorino</strong>
 
-Terima kasih telah meluangkan waktu untuk mengenal saya lebih dekat.
+</div>
 
